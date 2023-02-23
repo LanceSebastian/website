@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta http-equiv="Content-Type"
+		content="text/html; charset=utf-8" />
+		<title>My Webpage</title>
+		<link rel="stylesheet" href="./src/styles.css">
+	</head>
+	
+	<body>
+		<header id="frontCover">
+				<div class="image">
+					<img src="./src/Menu2.jpg"/>
+				</div>
+				
+				<div class="text">
+					<div class="title">
+						<p> HI, MY NAME IS </p>
+						<img src="./src/MenuName.png"/>
+						<p> 2ND YEAR UNDERGRADUATE <br> STUDYING SOFTWARE ENGINEERING</p>
+					</div>
+					
+					<div style=height:10vh;></div>
+					
+				</div>
+	
+		</header>
+		
+		<div id="navbar">
+				<a class="ls" href="#frontCover">LVS</a>
+				<a href="#contact">Say Hello!</a>
+				<a href="#education">Education</a>
+				<a href="#about">About</a>
+			</div>
+		<article id="page2">
+			<div id="about">
+				<p/>
+				<h1> About Me</h1>
+				<div id="photoFrame">
+					<img src="./src/PhotoPortrait2.jpg", id="photo"/>
+				</div>
+				<p>Hello! I'm a 2nd year student of Software Engineering located at Aberystwyth University, with the goal of working in the industry. <br> I don't have any professional experience however I've had the opportunity of working with a team with the goal of creating a chess tutor game, a student-led game development team using Roblox Studio, and some other personal projects!</p>
+				<p>Here are some of the languages I have worked with:</p>
+				<ul>
+					<li>Java</li>
+					<li>Python</li>
+					<li>Lua</li>
+					<li>JavaScript</li>
+					<li>C</li>
+					<li>C++</li>
+					<li>Haskell</li>
+				</ul>
+			</div>
+			
+			<form id="education">
+				<p/>
+				<h1> Education </h1>
+				<p> Here are some of the modules I've learned at Aberystwyth University: </p>
+				<p style = "float:right;">
+				<input type="radio" id= "SE" name ="module", value="0" /><label for="SE">Software Engineering </label>
+				<input type="radio" id= "RE" name ="module", value="1"/><label for="RE">Robotics and Embedded Systems </label>
+				<input type="radio" id= "AI" name ="module", value="2"/><label for="AI">Artificial Intelligence </label>
+				<input type="radio" id= "FP" name ="module", value="3"/><label for="FP">Functional Programming </label>
+				<input type="radio" id= "OOP" name ="module", value="4"/><label for="OOP">Object-Oriented Programming</label>
+				</p>
+				
+				<div id="description">
+					<p id="output"></p>
+				</div>
+			</form>
+			
+			
+			<div id="contact">
+				<h1>Say Hello!</h1>
+				<form
+				  action="https://formspree.io/f/mbjeoblb"
+				  method="POST"
+				>
+				  <label>
+					Your email:
+					<input type="email" name="email">
+				  </label>
+				  <p></p>
+				  <label>
+					Your message:
+					<textarea name="message"></textarea>
+				  </label>
+				  <!-- your other form fields go here -->
+				  <button type="submit">Send</button>
+				</form>
+			</div>
+			
+		</article>
+		
+		
+		
+		
+		<script>
+		window.onscroll = function() {myFunction()};
+		
+		var navbar = document.getElementById("navbar");
+		var sticky = navbar.offsetTop;
+		
+		function myFunction() {
+			if (window.pageYOffset >= sticky) {
+				navbar.classList.add("sticky")
+			} else {
+				navbar.classList.remove("sticky");
+			}
+		}
+		
+		descriptionMessage = document.getElementById("education")
+		descriptionMessage.addEventListener("change", (e) => {
+			e.preventDefault();
+					
+			if (document.forms['education'].module[0].checked){
+				message = "Grade: N/A <br><br>Software Engineering introduces us to the best practices for specification, design, implementation, testing, and operation of large software systems. Working in a group, we produced a product that follow professional standards.";
+			} else if (document.forms['education'].module[1].checked) {
+				message = "Grade: N/A <br><br>Robotics and Embedded Systems covers the uses, drawback, physical limitations, and the technological possibilites offered by robots and mobile/embedded computer systems. We learn how robots are made to deal with real world constraints.";
+			} else if (document.forms['education'].module[2].checked){
+				message = "Grade: N/A <br><br>Artifical Intelligence explores the uses of AI in computer games, problems, and everyday life. We then focused on issues of search (solutions to problems and games), followed by evolutionary algorithms, optimisations and swarms.";
+			} else if (document.forms['education'].module[3].checked){
+				message = "Grade: 1:1 (78%)<br><br>Functional Programming took a look into a very high level programming language. Using Haskell, we explored how to program using recursions and functions to produce a clean and maintainable program.";
+			} else if (document.forms['education'].module[4].checked){
+				message = "Grade: 1:1 (86%)<br><br>Object-Oriented Programming explores the use of Object-Oriented Programming using Java as the language. We used UML (Unified Modelling Language) notation to define our end-of-semester Project's structure.";
+			} else {
+				message = "Error.";
+			}
+			
+			document.getElementById("output").innerHTML = message;
+		});
+		</script>
+		
+	</body>
+</html>

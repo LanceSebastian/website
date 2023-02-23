@@ -1,0 +1,265 @@
+body {}
+
+html {scroll-behavior: smooth;}
+
+@font-face {
+	font-family:customFont;
+	src: url("Anton Regular.ttf");
+}
+
+.prevent-select {
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+}
+
+:root{
+	--main-bg-color: #3f3f3f;
+	--about-bg-color: #1c1c1c;
+	--second-color : gray;
+}
+
+body {
+	margin:0;
+	overflow-x: hidden;
+	font-family: Tahoma, sans-serif;
+	color: black;}
+	h1 {font-family: customFont; color: var(--second-color); font-size: 5vw; margin:0; user-select: none;}
+	p {font-family: Arial, sans-serif; color:white;}
+	hr {width:95%}
+
+	img {
+		max-width: 100%;
+	}
+
+	#frontCover {
+		/*border: 2px solid gray;*/
+		padding: 16px;
+		height: 120vh;
+		width: 100vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		background-size: cover;
+	}
+
+	.image {
+		/*border: 2px solid gray;*/
+		height: 100vh;
+		bottom:0;
+		position: fixed;
+		z-index: -1;
+		left:5vw;
+		
+	}
+	
+	.image img{max-height:100%}
+
+	.text {
+		/*border: 2px solid black;*/
+		width: 50vw;
+		z-index:-1;
+		position: absolute;
+		top:10vh;
+		right: 5vw;
+	}
+	
+	.title{
+		/*border: 2px solid black;*/
+		text-align: left;
+		font-weight:bold;
+		letter-spacing: 2px;
+		line-height: 1.2;
+	}
+	
+	.title p{
+		font-family: customFont; 
+		color: #4c2721; 
+		font-size: 3vw; 
+		margin: 1vh;
+	}
+	
+	#navbar {
+		overflow: hidden;
+		background-color: var(--about-bg-color);
+		z-index:1;
+		width:100%;
+	}
+	
+	.sticky {
+		background-color: rgba(0,0,0,0);
+		position: fixed;
+		width:100%;
+		top: 0;
+		transition:0.5s;
+		box-shadow: 0px 0px 20px black;
+	}
+	
+	#navbar a {
+		margin:1vw;
+		float: right;
+		display: block;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+	}
+	
+	#navbar a:hover {
+		color: white;
+		transform: scale(1.3);
+		transition:0.3s;
+	}
+	
+	#navbar a.ls {
+		font-family: customFont;
+		background-color: var(--second-color);
+		color: var(--main-bg-color);
+		float: left;
+		font-size: 5vh;
+		font-weight:bold;
+		transform: scale( 0.6 ,0.75);
+		padding:1px;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin:auto;
+		margin-left: 2vw;
+		border-radius: 10px;
+	}
+	
+	#navbar a.ls:hover {
+		transform: scale(0.72, 0.9);
+		transition:0.3s;
+	}
+	
+	
+	#page2{
+		/*border: 2px solid black;*/
+		margin:0;
+		background-color: var(--about-bg-color);
+		width: auto;
+		height: auto;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		
+	}
+	
+	.sticky + #page2 {
+		padding-top: 10vh;
+		
+	}
+	
+	#about {
+		/*border: 2px solid black;*/
+		width: 60vw;
+		height: auto;
+		margin:auto;
+		padding-top:5vh;
+		color:white;
+	}
+	
+	#photoFrame{
+		width: 400px;
+		height: 400px;
+		color: var(--second-color);
+		background-color: rgba(0,0,0,0.2);
+		border-radius: 100% 100% 100% 100%;
+		float: right;
+		margin-left: 5vw;
+		margin-right:5vw;
+		position: relative;
+	
+	}
+	
+	#photo{
+		width: 95%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		border-radius: 100% 100% 100% 100%;
+	}
+	
+	#education{
+		/*border: 2px solid black;*/
+		width: 60vw;
+		height: 100vh;
+		margin:auto;
+		padding-top:5vh;
+	}
+	
+	label {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		cursor: pointer;
+		color: white;
+		background-color: gray;
+		padding: 5px 10px;
+		border-radius: 3px;
+		transition: 0.3s;
+	}
+	
+	input[type="radio"]{
+		visibility: hidden;
+		height: 0;
+		width: 0;
+	}
+	
+	input[type="radio"]:checked + label{
+	  background-color: #58ba83;
+	  transform: scale(1.2);
+	}
+	
+	#description{
+		width: 25vw;
+		height: auto;
+		float:left;
+		background-color: rgba(0,0,0, 0.2);
+		margin-left:0;
+		padding: 2vw;
+	}
+	
+	#contact{
+		margin:auto;
+		align-items: center;
+		width: 60vw;
+		height: 80vh;
+	}
+	
+	input[type=text], select, textarea {
+		width: 100%;
+		padding: 12px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+		margin-top: 6px;
+		margin-bottom: 16px;
+		resize: vertical;
+	}
+	
+	input[type=email], select, textarea {
+		width: 100%;
+		padding: 12px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+		margin-top: 6px;
+		margin-bottom: 16px;
+		resize: vertical;
+	}
+
+	input[type=submit] {
+		background-color: #5DADE2;
+		color: white;
+		padding: 12px 20px;
+		border: none;
+		border-radius: 4px;
+	}
+	
+	
+}
+
