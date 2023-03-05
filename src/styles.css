@@ -25,7 +25,7 @@ body {
 	font-family: Tahoma, sans-serif;
 	color: black;}
 	h1 {font-family: customFont; color: var(--second-color); font-size: 5vw; margin-left:15vw; user-select: none;}
-	p {font-family: Arial, sans-serif; color:white;}
+	p {font-family: Arial, sans-serif; color:var(--second-color);}
 	hr {width:95%}
 
 	img {
@@ -158,7 +158,7 @@ body {
 		width: 90vw;
 		height: auto;
 		font-family: customFont; 
-		color: var(--second-color); 
+		color: white; 
 		font-size: 100px; 
 		margin-left:18%;
 
@@ -195,6 +195,22 @@ body {
 		padding: 2%;
 		margin:0;
 	}
+	
+	.skillBar {
+		width: 100%;
+		background-color: var(--second-color);
+	}
+	
+	.skills {
+		text-align:right;
+		height: 5px;
+		background-color:white;
+	}
+	
+	.cpp {width: 80%}
+	.java {width: 70%}
+	.python {width: 60%}
+	.html {width: 60%}
 	
 	#education{
 		outline: 2px dotted white;
@@ -234,7 +250,7 @@ body {
 		margin:auto;
 		align-items: center;
 		width: 100vw;
-		height: 80vh;
+		height: 100vh;
 	}
 	
 	input[type=text], select, textarea {
