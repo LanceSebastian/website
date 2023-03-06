@@ -159,8 +159,8 @@ body {
 		height: auto;
 		font-family: customFont; 
 		color: white; 
-		font-size: 100px; 
-		margin-left:18%;
+		font-size: 100px;
+		text-align:center;
 
 	}
 	
@@ -168,7 +168,7 @@ body {
 		outline: 2px dotted white;
 		
 		width: 100vw;
-		height: 100vh;
+		min-height: 100vh;
 		padding-top:5vh;
 		color:white;
 		
@@ -180,17 +180,17 @@ body {
 	
 	#photoFrame{
 		outline: 15px solid rgba(0,0,0, 0.2);
-		width: 300px;
-		height: 300px;
+		width: 280px;
+		height: 280px;
 		color: var(--second-color);
 		background-color: rgba(0,0,0,0.2);
 		border-radius: 100% 100% 100% 100%;
-		margin:0;
+		margin:10px;
 	
 	}
 	
 	#description{
-		/* outline: 1px dotted gray; */
+		/*outline: 1px dotted gray; */
 		width: 600px;
 		padding: 2%;
 		margin:0;
