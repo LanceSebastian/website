@@ -67,19 +67,21 @@
 			
 			
 			<form id="education">
-				<p/>
 				<div id="title">Education</div>
 				<p> Here are some of the modules I've learned at Aberystwyth University: </p>
-				<p style = "float:right;">
-				<input type="radio" id= "SE" name ="module", value="0" /><label for="SE">Software Engineering </label>
-				<input type="radio" id= "RE" name ="module", value="1"/><label for="RE">Robotics and Embedded Systems </label>
-				<input type="radio" id= "AI" name ="module", value="2"/><label for="AI">Artificial Intelligence </label>
-				<input type="radio" id= "FP" name ="module", value="3"/><label for="FP">Functional Programming </label>
-				<input type="radio" id= "OOP" name ="module", value="4"/><label for="OOP">Object-Oriented Programming</label>
-				</p>
-				
-				<div id="description">
-					<p id="output"></p>
+				<div id="moduleContainer">
+					<div class="scene scene--card">
+						<div class="card">
+							<div class="card__face card__face--front">Software Engineering</div>
+							<div class="card__face card__face--back">N/A</div>
+						</div>
+					</div>
+					<div class="scene scene--card">
+						<div class="card">
+							<div class="card__face card__face--front">C & C++</div>
+							<div class="card__face card__face--back">1:1</div>
+						</div>
+					</div>
 				</div>
 			</form>
 			
@@ -122,6 +124,13 @@
 				navbar.classList.remove("sticky");
 			}
 		}
+		
+		var cards = document.querySelectorAll('.card');
+		[...cards].forEach((card)=>{
+			card.addEventListener('click',function() {
+				card.classList.toggle('is-flipped');
+				});
+			});
 		</script>
 		
 	</body>
